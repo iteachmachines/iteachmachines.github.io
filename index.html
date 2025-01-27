@@ -1,328 +1,295 @@
 <!DOCTYPE html>
-<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<html lang="en">
 <head>
-
-   <!--- Basic Page Needs
-   ================================================= -->
-   <meta charset="utf-8">
-	<title>Priyam kakati</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
-
-   <!-- Mobile Specific Metas
-   ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- CSS
-    ================================================== -->
-   <link rel="stylesheet" href="css/default.css">
-	<link rel="stylesheet" href="css/layout.css">
-   <link rel="stylesheet" href="css/media-queries.css">
-   <link rel="stylesheet" href="css/magnific-popup.css">
-
-   <!-- Script
-   ================================================== -->
-	<script src="js/modernizr.js"></script>
-
-   <!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="favicon.png" >
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priyam Kakati - AI & ML Expert</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(45deg, #3b82f6, #60a5fa, #93c5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-hover {
+            transition: transform 0.3s ease-in-out;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+        }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+        .skill-bar {
+            width: 0;
+            transition: width 1s ease-in-out;
+        }
+        .number-counter {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-out;
+        }
+        .number-counter.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
-
-<body>
-
-   <!-- Header
-   ================================================== -->
-   <header id="home">
-
-      <nav id="nav-wrap">
-
-         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
-	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
-
-         <ul id="nav" class="nav">
-            <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
-            <li><a class="smoothscroll" href="#about">About</a></li>
-	         <li><a class="smoothscroll" href="#resume">Resume</a></li>
-         </ul> <!-- end #nav -->
-
-      </nav> <!-- end #nav-wrap -->
-
-      <div class="row banner">
-         <div class="banner-text">
-            <h1 class="responsive-headline">I'm Priyam kakati.</h1>
-            <hr />
-            <ul class="social">
-               <li><a href="https://github.com/iteachmachines"><i class="fa fa-github"></i></a></li>
-               <li><a href="https://www.linkedin.com/in/priyam-kakati/"><i class="fa fa-linkedin"></i></a></li>
-            </ul>
-         </div>
-      </div>
-
-      <p class="scrolldown">
-         <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
-      </p>
-
-   </header> <!-- Header End -->
-
-
-   <!-- About Section
-   ================================================== -->
-   <section id="about">
-
-      <div class="row">
-
-         <div class="three columns">
-
-            <img class="profile-pic"  src="images/profilepic.jpg" alt="" />
-
-         </div>
-
-         <div class="nine columns main-col">
-
-            <h2>About Me</h2>
-
-            <p>I love to build utility apps and solve real world problems.
-               I am ambitious and hard working individual with a sheer curiosity into the emerging technologies of the software world.
-               Skilled in python, C, C++,data structures, algorithms,data science,machine learning and deep learning.
-               I like to contribute in open source projects too.
-               
-            </p>
-
-            <div class="row">
-
-               <div class="columns contact-details">
-
-                  <h2>Contact Details</h2>
-                  <p class="address">
-						   <span>Priyam kakati</span><br>
-						   <span>+91-6001591627</span><br>
-					   </p>
-
-               </div>
-
-               <div class="columns download">
-                  <p>
-                     <a href="https://drive.google.com/file/d/1nBHPsIu0QA9OydLTy17dOL-z4q7MkJe3/view?usp=sharing" class="button"><i class="fa fa-download"></i>Download Resume</a>
-                  </p>
-               </div>
-
-            </div> <!-- end row -->
-
-         </div> <!-- end .main-col -->
-
-      </div>
-
-   </section> <!-- About Section End-->
-
-
-   <!-- Resume Section
-   ================================================== -->
-   <section id="resume">
-
-      <!-- Education
-      ----------------------------------------------- -->
-      <div class="row education">
-
-         <div class="three columns header-col">
-            <h1><span>Education</span></h1>
-         </div>
-
-         <div class="nine columns main-col">
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>Assam Don Bosco University</h3>
-                  <p class="info">BTech in computer science and engineering <span>&bull;</span> <em class="date">April 2017-july 2021</em></p>
-                  <h3>Courses taken</h3>
-                  <p>
-                     Machine Learning,Statistical Methods in AI,Computer Vision,Compilers,Optimization Methods,Digital Image Processing,Database Systems, Intro to Databases
-                      ,Artificial Intelligence
-                      ,Computer Graphics
-                      ,Operating Systems,Computer System Organization
-                      ,Computer Programming,Data Structures,Algorithms
-                     
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->
-
-            <div class="row item">
-
-               <div class="twelve columns">
-               
-
-               </div>
-
-            </div> <!-- item end -->
-
-         </div> <!-- main-col end -->
-
-      </div> <!-- End Education -->
-
-
-      <!-- Work
-      ----------------------------------------------- -->
-      <div class="row work">
-
-         <div class="three columns header-col">
-            <h1><span>Work experience</span></h1>
-         </div>
-
-         <div class="nine columns main-col">
-		 
-		 
-	    <div class="row item">
-
-               <div class="twelve columns">
-
-		    <h3>Gravitas.ai</h3>
-                  <p class="info">Data scientist<span>&bull;</span> <em class="date">october 2021 - April 2022</em></p>
-                  <p>
-                     Tasks-<br>
-                    • Collected the data from the clients and created the chatbot intents and entities based on the client's need.<br>
-                    •  Used AWS lex for NLU part and creation of the bots and deployed the bots using flask api.<br>
-                     
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->     
-		       
-                  <h3>Nextgen innovation labs</h3>
-                  <p class="info">Data scientist<span>&bull;</span> <em class="date">october 2021 - April 2022</em></p>
-                  <p>
-                     Tasks-<br>
-                    • Collected the data from the clients and annotated the images for training data and exported the data into
-                     pascal-voc format.<br>
-                    •  Used deep learning techniques to train various object detection models like mask-rcnn,yolo-v3,Yolo-v4 for detecting
-                     various shipping containers and container numbers through drone videos.<br>
-                    •Extracted the container numbers from the containers using ocr recognition methods.<br>
-Wrote a python script to automate all the process of the pipeline and deployed the model in amazon aws.<br>
-                  </p>
-
-               </div>
-
-            </div> <!-- item end --> 
-		 
-		 <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>Averyx group</h3>
-                  <p class="info">Software engineering intern <span>&bull;</span> <em class="date">April 2020 - june 2020</em></p>
-                  <p>
-                     Tasks-<br>
-                     •Worked on building a technical screener for various stock indices.<br>
-                     • Created several strategies based on different technical indicators.<br>
-                     • Backtested the strategies and later optimised the strategies for better return % for 1 and 5 min trading.<br>
-                     • Created an webapp by using flask REST api and deployed the model in amazon AWS cloud.<br> 
-                     Tools-Python,pandas,TA-lib,backtesting.py,Flask,HTML,CSS,Bootstrap,AWS> <br>
-                     
-                     Tools-Python,pandas,sklearn,keras,tensorflow,matplotlib,Azure cloud.
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>Drishya.ai</h3>
-                  <p class="info">Data science intern <span>&bull;</span> <em class="date">May 2020 - August 2020</em></p>
-                  <p>
-                     Tasks-<br>
-                     • Worked with stakeholders to determine how to use business data for
-                     valuable business solutions and generate problem statements.<br>
-                     • Collaborated with engineering and product development teams.<br>
-                     • Built predictive models using machine-learning, deep learning algorithms.<br>
-                     • Undertook preprocessing of structured and unstructured data.<br>
-                     • Combined models through ensemble modelling. Presented information using data visualisation techniques.<br>
-                     
-                     Tools-Python,pandas,sklearn,keras,tensorflow,matplotlib,Azure cloud.
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>Getboarded technologies</h3>
-                  <p class="info">Data science intern<span>&bull;</span> <em class="date">April 2020 - June 2020</em></p>
-                  <p>
-                     Tasks-<br>
-                     • Collected covid 19 hotline numbers of various states of the top infected countries and cleaned up the raw data in a structured format using pandas.<br>
-                     • Made the tableau dashboard for New Case Analysis connected to a live data source.<br>
-                     • Gathered data of worldwide air routes (last updated 2014), Government travel
-                     measures (Unicef data) and air passenger traffic data (last updated 2018).<br>
-                     • Prepared a dashboard in Tableau showing all flight routes from a source airport (option to select)<br>
-                     highlighting the source and destination countries.<br>
-                     Tools-Python,Tableau,Scrapy,Beautifulsoup,pandas
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->
-
-         </div> <!-- main-col end -->
-
-      </div> <!-- End Work -->
-
-
-      <!-- Skills
-      ----------------------------------------------- -->
-      <div class="row skill">
-
-         <div class="three columns header-col">
-            <h1><span>Skills</span></h1>
-         </div>
-
-         <div class="nine columns main-col">
-
-            <p>• Languages: Python, C++, SQL, Bash, JAVA(basic)<br>
-               • Frameworks: Scikit-learn, NLTK, SpaCy, TensorFlow, Keras, Django, Flask,Spark<br>
-               • Tools: Jupyter notebook, Docker, GIT, PostgreSQL, SQLite<br>
-               • Platforms: Linux, Windows, Azure,AWS<br>
-               • Soft Skills: Leadership, Event Management, Writing, Public Speaking, Time Management<br>
-            </p>
-
-			</div> <!-- main-col end -->
-
-      </div> <!-- End skills -->
-
-   </section> <!-- Resume Section End-->
-
-
-
-         <!-- Modal Popup
-	      --------------------------------------------------------------- -->
-
-         
-	      
-
-   <!-- Java Script
-   ================================================== -->
-   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
-   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-
-   <script src="js/jquery.flexslider.js"></script>
-   <script src="js/waypoints.js"></script>
-   <script src="js/jquery.fittext.js"></script>
-   <script src="js/magnific-popup.js"></script>
-   <script src="js/init.js"></script>
-
-</body>
-
-</html>
+<body class="bg-gray-900 text-white">
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Header Section -->
+    <header class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="content container mx-auto px-4 text-center">
+            <h1 class="text-6xl font-bold mb-6 animate__animated animate__fadeInDown">
+                <span class="gradient-text">Priyam Kakati</span>
+            </h1>
+            <div class="text-2xl mb-8 animate__animated animate__fadeInUp">
+                <span id="typed"></span>
+            </div>
+            <div class="flex justify-center space-x-6 mb-12 animate__animated animate__fadeInUp animate__delay-1s">
+                <a href="mailto:priyamkakati46@gmail.com" class="hover:text-blue-400 transition-colors">
+                    <i class="fas fa-envelope text-3xl"></i>
+                </a>
+                <a href="https://linkedin.com/in/priyam-kakati" target="_blank" class="hover:text-blue-400 transition-colors">
+                    <i class="fab fa-linkedin text-3xl"></i>
+                </a>
+                <a href="https://github.com/iteachmachines" target="_blank" class="hover:text-blue-400 transition-colors">
+                    <i class="fab fa-github text-3xl"></i>
+                </a>
+            </div>
+            <div class="animate__animated animate__fadeInUp animate__delay-2s">
+                <a href="#about" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full transition-colors">
+                    Explore My Work
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <div class="number-counter p-6 bg-gray-700 rounded-lg">
+                    <div class="text-4xl font-bold text-blue-400" data-target="60000">0</div>
+                    <div class="text-gray-400">Students Trained</div>
+                </div>
+                <div class="number-counter p-6 bg-gray-700 rounded-lg">
+                    <div class="text-4xl font-bold text-blue-400" data-target="180">0</div>
+                    <div class="text-gray-400">Countries Reached</div>
+                </div>
+                <div class="number-counter p-6 bg-gray-700 rounded-lg">
+                    <div class="text-4xl font-bold text-blue-400" data-target="99">0</div>
+                    <div class="text-gray-400">Percentile on Kaggle</div>
+                </div>
+                <div class="number-counter p-6 bg-gray-700 rounded-lg">
+                    <div class="text-4xl font-bold text-blue-400" data-target="93">0</div>
+                    <div class="text-gray-400">Model Accuracy</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Technical Expertise</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card-hover bg-gray-800 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Languages & Frameworks</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Python/ML Frameworks</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar bg-blue-500 rounded-full h-2" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Deep Learning</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar bg-blue-500 rounded-full h-2" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-hover bg-gray-800 p-6 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4">Cloud & DevOps</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>AWS/Azure/GCP</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar bg-blue-500 rounded-full h-2" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>MLOps</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="bg-gray-700 rounded-full h-2">
+                                <div class="skill-bar bg-blue-500 rounded-full h-2" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="py-20 bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card-hover bg-gray-900 rounded-lg overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4">GPT-3 Powered Chatbot</h3>
+                        <p class="text-gray-400 mb-4">Conversational AI handling 5000+ queries with 90% satisfaction rate</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-900 rounded-full text-sm">OpenAI</span>
+                            <span class="px-3 py-1 bg-blue-900 rounded-full text-sm">Python</span>
+                            <span class="px-3 py-1 bg-blue-900 rounded-full text-sm">Flask</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-hover bg-gray-900 rounded-lg overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4">RAG for Document Q&A</h3>
+                        <p class="text-gray-400 mb-4">85% accuracy in technical document analysis using BERT and GPT-3.5</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-900 rounded-full text-sm">NLP</span>
+                            <span class="px-3 py-1 bg-blue-900 rounded-full text-sm">BERT</span>
+                            <span class="px-3 py-1 bg-blue-900 rounded-full text-sm">LangChain</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-hover bg-gray-900 rounded-lg overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4">Resume Parser using LLM</h3>
+                        <p class="text-gray-400 mb-4">90% accuracy in extracting information from resumes</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-900 rounded-full text-sm">LLM</span>
+                            <span class="px-3 py-1 bg-blue-900 rounded-full text-sm">API</span>
+                            <span class="px-3 py-1 bg-blue-900 rounded-full text-sm">Flask</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Connect for AI consulting or if you have any AI project!</h2>
+            <form action="https://formspree.io/f/your-formspree-id" method="POST" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <input type="text" name="name" placeholder="Your Name" required
+                            class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 transition-colors">
+                    </div>
+                    <div>
+                        <input type="email" name="email" placeholder="Your Email" required
+                            class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 transition-colors">
+                    </div>
+                </div>
+                <div>
+                    <input type="text" name="subject" placeholder="Subject" required
+                        class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 transition-colors">
+                </div>
+                <div>
+                    <textarea name="message" rows="6" placeholder="Project Details" required
+                        class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit"
+                        class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full transition-colors transform hover:scale-105">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Typed.js initialization
+        new Typed('#typed', {
+            strings: [
+                'Data Scientist',
+                'Machine Learning Expert',
+                'AI Engineer',
+                'Top 1% on Kaggle'
+            ],
+            typeSpeed: 50,
+            backSpeed: 30,
+            loop: true
+        });
+
+        // Particles.js initialization
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80 },
+                color: { value: '#4B5563' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5 },
+                size: { value: 3 },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#4B5563',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2
+                }
+            }
+        });
+
+        // Animate skill bars on scroll
+        function animateSkillBars() {
+            document.querySelectorAll('.skill-bar').forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        }
+
+        // Animate number counters
+        function animateNumbers() {
+            document.querySelectorAll('.number-counter').forEach(counter => {
+                const target = parseInt(counter.querySelector('[data-target]').dataset.target);
+                const numberElement = counter.querySelector('[data-target]');
+                let current = 0;
+                const increment = target / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        numberElement.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        number
