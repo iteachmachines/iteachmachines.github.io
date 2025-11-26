@@ -1,494 +1,394 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Priyam Kakati | Data Scientist & AI Engineer</title>
-    <meta name="description" content="Portfolio of Priyam Kakati, an AI/ML Engineer and Data Scientist specializing in LLMs, RAG, and Computer Vision.">
-    
+    [cite_start]<meta name="description" content="Portfolio of Priyam Kakati[cite: 1], AI/ML Engineer specializing in LLMs, RAG, and Computer Vision. [cite_start]Top 1% Kaggle Expert[cite: 10].">
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
-
         :root {
-            --neon-cyan: #00f3ff;
-            --neon-purple: #bc13fe;
-            --dark-bg: #050511;
-            --glass-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
+            --primary: #00f2ff;
+            --secondary: #7000ff;
+            --dark: #030308;
+            --card-bg: #0a0a12;
         }
 
         body {
-            font-family: 'Space Grotesk', sans-serif;
-            background-color: var(--dark-bg);
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--dark);
             color: #e2e8f0;
             overflow-x: hidden;
         }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0b0b1e; }
-        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--neon-cyan); }
-
-        /* Effects */
-        .glass-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--glass-border);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        h1, h2, h3, .mono-font {
+            font-family: 'Space Grotesk', sans-serif;
         }
 
-        .glass-card:hover {
-            border-color: rgba(0, 243, 255, 0.3);
-            box-shadow: 0 0 30px rgba(0, 243, 255, 0.1);
-            transform: translateY(-5px);
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #fff 0%, var(--neon-cyan) 50%, var(--neon-purple) 100%);
+        /* Modern Gradient Text */
+        .text-gradient {
+            background: linear-gradient(135deg, #fff 0%, var(--primary) 50%, var(--secondary) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .nav-link {
+        /* Glass / Bento Box Styling */
+        .bento-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 0;
-            background: var(--neon-cyan);
-            transition: width 0.3s ease;
-        }
-        .nav-link:hover::after { width: 100%; }
-
-        .skill-tag {
-            background: rgba(0, 243, 255, 0.05);
-            border: 1px solid rgba(0, 243, 255, 0.1);
-            transition: all 0.3s;
-        }
-        .skill-tag:hover {
-            background: rgba(0, 243, 255, 0.15);
-            border-color: var(--neon-cyan);
-            transform: scale(1.05);
+            overflow: hidden;
         }
 
-        /* Timeline vertical line */
-        .timeline-line::before {
-            content: '';
+        .bento-card:hover {
+            border-color: rgba(0, 242, 255, 0.3);
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 40px -10px rgba(0, 242, 255, 0.1);
+        }
+
+        .bento-card::before {
+            content: "";
             position: absolute;
             top: 0;
-            bottom: 0;
-            left: 20px;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--neon-cyan), var(--neon-purple), transparent);
-            z-index: 0;
-        }
-
-        #particles-js {
-            position: fixed;
+            left: -100%;
             width: 100%;
             height: 100%;
-            z-index: -1;
-            background: radial-gradient(circle at 50% 50%, #0f172a 0%, #000000 100%);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+            transition: 0.5s;
         }
 
-        .floating-icon { animation: float 6s ease-in-out infinite; }
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
+        .bento-card:hover::before {
+            left: 100%;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--dark); }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+        /* Glowing Orbs for Background */
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.4;
+            z-index: -1;
+            animation: pulse 8s infinite alternate;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.3; }
+            100% { transform: scale(1.2); opacity: 0.5; }
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, var(--primary), #00aaff);
+            color: #000;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+        }
+        .btn-primary:hover {
+            box-shadow: 0 0 40px rgba(0, 242, 255, 0.6);
+            transform: scale(1.05);
         }
     </style>
 </head>
-<body class="antialiased">
-    <div id="particles-js"></div>
+<body class="selection:bg-cyan-500 selection:text-black">
 
-    <nav class="fixed w-full z-50 transition-all duration-300 bg-[#050511]/80 backdrop-blur-md border-b border-white/5">
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+        <div class="glow-orb w-96 h-96 bg-purple-900/40 top-0 right-0"></div>
+        <div class="glow-orb w-[500px] h-[500px] bg-cyan-900/30 bottom-0 left-0"></div>
+    </div>
+
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md border-b border-white/5 bg-black/50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold tracking-tighter">
-                PK<span class="text-cyan-400">.</span>
+            <a href="#" class="text-2xl font-bold tracking-tighter mono-font">
+                PK<span class="text-cyan-400">.</span>ai
             </a>
             <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
-                <a href="#about" class="nav-link text-gray-300 hover:text-white">ABOUT</a>
-                <a href="#skills" class="nav-link text-gray-300 hover:text-white">SKILLS</a>
-                <a href="#experience" class="nav-link text-gray-300 hover:text-white">EXPERIENCE</a>
-                <a href="#projects" class="nav-link text-gray-300 hover:text-white">PROJECTS</a>
+                <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
+                <a href="#stack" class="hover:text-cyan-400 transition-colors">Tech Stack</a>
+                <a href="#experience" class="hover:text-cyan-400 transition-colors">Experience</a>
+                <a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
             </div>
-            <a href="mailto:priyamkakati46@gmail.com" class="px-6 py-2 rounded-full border border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10 transition-all text-sm font-bold">
-                HIRE ME
+            <a href="mailto:priyamkakati46@gmail.com" class="hidden md:block px-5 py-2 rounded-full border border-white/20 hover:border-cyan-400 hover:text-cyan-400 transition-all text-sm font-medium">
+                <i class="fas fa-paper-plane mr-2"></i>Contact
             </a>
         </div>
     </nav>
 
-    <section class="min-h-screen flex items-center justify-center relative pt-20">
-        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    <section class="min-h-screen flex items-center justify-center relative pt-20" id="about">
+        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
             <div data-aos="fade-right">
-                <div class="inline-block px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-6">
-                    <span class="text-cyan-400 text-sm font-bold tracking-wider">TOP 1% KAGGLE EXPERT</span>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-bold tracking-wider mb-6">
+                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+                    OPEN TO OPPORTUNITIES
                 </div>
-                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
+                
+                <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold leading-none mb-6">
                     Priyam <br>
-                    <span class="gradient-text">Kakati</span>
+                    <span class="text-gradient">Kakati</span>
                 </h1>
-                <h2 class="text-2xl md:text-3xl text-gray-400 font-light mb-8">
-                    Data Scientist & <span class="text-white font-semibold">AI Engineer</span>
-                </h2>
+                
+                <div class="text-xl md:text-2xl text-gray-400 font-light mb-8 h-12">
+                    I am a <span id="typing-text" class="text-white font-semibold"></span>
+                </div>
+                
                 <p class="text-gray-400 max-w-lg leading-relaxed mb-10 text-lg">
-                    I build production-grade AI systems that scale. Specialized in Large Language Models (LLMs), RAG Architectures, and Generative AI.
+                    Transforming data into decision-making power. Specialized in building scalable 
+                    <span class="text-cyan-400">GenAI</span> systems, 
+                    <span class="text-purple-400">RAG Architectures</span>, and 
+                    [cite_start]production-grade <span class="text-blue-400">ML Pipelines</span>[cite: 6, 7].
                 </p>
                 
-                <div class="flex gap-4">
-                    <a href="#contact" class="px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-bold hover:shadow-[0_0_20px_rgba(6,182,212,0.5)] transition-all">
-                        View Resume
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://drive.google.com/file/d/1IOvhMS5kYAnOANx_v0xINo1lvgS1bjZK/view?usp=sharing" 
+                       target="_blank"
+                       class="btn-primary px-8 py-3 rounded-lg text-center flex items-center justify-center gap-2">
+                        <i class="fas fa-file-arrow-down"></i> View Resume
                     </a>
-                    <div class="flex gap-4 items-center px-4">
-                        <a href="https://github.com/iteachmachines" target="_blank" class="text-gray-400 hover:text-white text-2xl transition-transform hover:-translate-y-1"><i class="fab fa-github"></i></a>
-                        <a href="https://linkedin.com/in/priyam-kakati" target="_blank" class="text-gray-400 hover:text-white text-2xl transition-transform hover:-translate-y-1"><i class="fab fa-linkedin"></i></a>
+                    
+                    <div class="flex gap-4 items-center px-4 justify-center sm:justify-start">
+                        <a href="https://github.com/iteachmachines" target="_blank" class="text-gray-400 hover:text-white text-3xl transition-transform hover:-translate-y-1"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/priyam-kakati" target="_blank" class="text-gray-400 hover:text-white text-3xl transition-transform hover:-translate-y-1"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
             </div>
 
-            <div class="relative hidden md:block" data-aos="fade-left">
-                <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 blur-[100px] rounded-full"></div>
-                <div class="relative glass-card p-8 rounded-2xl border-l-4 border-cyan-500 floating-icon">
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-white/5 p-4 rounded-lg">
-                            <i class="fas fa-brain text-cyan-400 text-2xl mb-2"></i>
-                            <div class="text-2xl font-bold text-white">4+</div>
-                            <div class="text-xs text-gray-400">Years Exp</div>
-                        </div>
-                        <div class="bg-white/5 p-4 rounded-lg">
-                            <i class="fas fa-users text-purple-400 text-2xl mb-2"></i>
-                            <div class="text-2xl font-bold text-white">60k+</div>
-                            <div class="text-xs text-gray-400">Mentored</div>
-                        </div>
-                        <div class="bg-white/5 p-4 rounded-lg col-span-2">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-sm text-gray-300">System Accuracy</span>
-                                <span class="text-green-400 font-bold">99.9%</span>
+            <div class="relative" data-aos="zoom-in" data-aos-delay="200">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bento-card p-6 rounded-2xl col-span-2 bg-gradient-to-r from-cyan-900/20 to-blue-900/20 border-cyan-500/30">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-3xl font-bold text-white mb-1">Top 1%</h3>
+                                [cite_start]<p class="text-sm text-cyan-300">Global Kaggle Expert [cite: 10, 61]</p>
                             </div>
-                            <div class="h-2 bg-gray-700 rounded-full overflow-hidden">
-                                <div class="h-full bg-gradient-to-r from-cyan-400 to-green-400 w-[99%]"></div>
-                            </div>
+                            <i class="fas fa-trophy text-4xl text-yellow-500/80"></i>
                         </div>
+                    </div>
+                    <div class="bento-card p-6 rounded-2xl">
+                        <h3 class="text-3xl font-bold text-white mb-1">4+</h3>
+                        [cite_start]<p class="text-sm text-gray-400">Years Experience [cite: 6]</p>
+                    </div>
+                    <div class="bento-card p-6 rounded-2xl">
+                        <h3 class="text-3xl font-bold text-white mb-1">60k+</h3>
+                        [cite_start]<p class="text-sm text-gray-400">Learners Mentored [cite: 64]</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="py-24 relative">
+    <section id="stack" class="py-24 relative">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-4xl font-bold mb-4">Technical <span class="text-cyan-400">Arsenal</span></h2>
-                <p class="text-gray-400">Comprehensive stack across the full ML lifecycle</p>
+            <div class="flex items-center gap-4 mb-12" data-aos="fade-up">
+                <div class="h-px bg-gray-700 flex-1"></div>
+                <h2 class="text-3xl md:text-4xl font-bold text-center">Technical <span class="text-cyan-400">Arsenal</span></h2>
+                <div class="h-px bg-gray-700 flex-1"></div>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-6 auto-rows-[minmax(180px,auto)]">
                 
-                <div class="glass-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="100">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="p-3 rounded-lg bg-purple-500/20 text-purple-400"><i class="fas fa-robot"></i></div>
-                        <h3 class="text-xl font-bold">Generative AI & LLMs</h3>
+                <div class="bento-card p-6 rounded-2xl md:col-span-2 lg:col-span-2 row-span-2 flex flex-col justify-between" data-aos="fade-up">
+                    <div>
+                        <div class="w-12 h-12 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400 text-2xl mb-4">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Generative AI & LLMs</h3>
+                        [cite_start]<p class="text-gray-400 mb-6 text-sm">Specialized in building Agentic workflows and RAG systems using modern frameworks[cite: 7].</p>
                     </div>
                     <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-cyan-300">OpenAI API</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-cyan-300">LangChain</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-cyan-300">LlamaIndex</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-cyan-300">RAG</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-cyan-300">Hugging Face</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-cyan-300">Claude</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-cyan-300">PEFT / LoRA</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-cyan-300">Prompt Eng</span>
+                        <span class="px-3 py-1 rounded bg-white/5 border border-white/10 text-xs">OpenAI API</span>
+                        <span class="px-3 py-1 rounded bg-white/5 border border-white/10 text-xs">LangChain</span>
+                        <span class="px-3 py-1 rounded bg-white/5 border border-white/10 text-xs">LlamaIndex</span>
+                        <span class="px-3 py-1 rounded bg-white/5 border border-white/10 text-xs">RAG</span>
+                        <span class="px-3 py-1 rounded bg-white/5 border border-white/10 text-xs">Hugging Face</span>
+                        <span class="px-3 py-1 rounded bg-white/5 border border-white/10 text-xs">PEFT/LoRA</span>
+                        <span class="px-3 py-1 rounded bg-white/5 border border-white/10 text-xs">Claude</span>
                     </div>
                 </div>
 
-                <div class="glass-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="200">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="p-3 rounded-lg bg-blue-500/20 text-blue-400"><i class="fas fa-eye"></i></div>
-                        <h3 class="text-xl font-bold">Vision & NLP</h3>
+                <div class="bento-card p-6 rounded-2xl md:col-span-2" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i class="fas fa-eye text-blue-400 text-xl"></i>
+                        [cite_start]<h3 class="text-lg font-bold">Computer Vision [cite: 6]</h3>
                     </div>
                     <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-blue-300">YOLOv8</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-blue-300">OpenCV</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-blue-300">BERT</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-blue-300">Transformers</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-blue-300">Whisper</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-blue-300">OCR</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-blue-300">Spacy</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-blue-300">Detectron2</span>
+                        <span class="px-2 py-1 bg-blue-900/30 text-blue-300 rounded text-xs">YOLOv8</span>
+                        <span class="px-2 py-1 bg-blue-900/30 text-blue-300 rounded text-xs">OpenCV</span>
+                        <span class="px-2 py-1 bg-blue-900/30 text-blue-300 rounded text-xs">Detectron2</span>
+                        <span class="px-2 py-1 bg-blue-900/30 text-blue-300 rounded text-xs">OCR</span>
                     </div>
                 </div>
 
-                <div class="glass-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="300">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="p-3 rounded-lg bg-orange-500/20 text-orange-400"><i class="fas fa-cloud"></i></div>
-                        <h3 class="text-xl font-bold">MLOps & Cloud</h3>
+                <div class="bento-card p-6 rounded-2xl md:col-span-1" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i class="fas fa-cogs text-orange-400 text-xl"></i>
+                        [cite_start]<h3 class="text-lg font-bold">MLOps [cite: 8]</h3>
                     </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-orange-300">AWS SageMaker</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-orange-300">AWS Lambda</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-orange-300">Docker</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-orange-300">Kubernetes</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-orange-300">MLflow</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-orange-300">Airflow</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-orange-300">CI/CD</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-orange-300">GCP Vertex AI</span>
-                    </div>
-                </div>
-
-                <div class="glass-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="400">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="p-3 rounded-lg bg-green-500/20 text-green-400"><i class="fas fa-code"></i></div>
-                        <h3 class="text-xl font-bold">Languages & Core</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-green-300">Python</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-green-300">PyTorch</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-green-300">TensorFlow</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-green-300">SQL</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-green-300">C++</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-green-300">Rust</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-green-300">Go</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-green-300">Scikit-learn</span>
-                    </div>
-                </div>
-
-                <div class="glass-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="500">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="p-3 rounded-lg bg-pink-500/20 text-pink-400"><i class="fas fa-database"></i></div>
-                        <h3 class="text-xl font-bold">Data & Tools</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-pink-300">Pinecone</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-pink-300">Weaviate</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-pink-300">MongoDB</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-pink-300">PostgreSQL</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-pink-300">Spark</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-pink-300">Databricks</span>
-                        <span class="skill-tag px-3 py-1 rounded text-sm text-pink-300">Redis</span>
-                    </div>
-                </div>
-
-                <div class="glass-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="600">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="p-3 rounded-lg bg-yellow-500/20 text-yellow-400"><i class="fas fa-certificate"></i></div>
-                        <h3 class="text-xl font-bold">Certifications</h3>
-                    </div>
-                    <ul class="space-y-2 text-sm text-gray-300">
-                        <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i> AWS Certified ML Specialty</li>
-                        <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i> TensorFlow Developer</li>
-                        <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i> Azure Data Scientist Assoc.</li>
-                        <li class="flex items-center"><i class="fas fa-check text-yellow-500 mr-2"></i> DeepLearning.AI Specialization</li>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li>AWS SageMaker</li>
+                        <li>Docker & K8s</li>
+                        <li>MLflow</li>
+                        <li>CI/CD</li>
                     </ul>
                 </div>
+
+                <div class="bento-card p-6 rounded-2xl md:col-span-1" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i class="fas fa-code text-green-400 text-xl"></i>
+                        [cite_start]<h3 class="text-lg font-bold">Core [cite: 15]</h3>
+                    </div>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li>Python (Expert)</li>
+                        <li>SQL</li>
+                        <li>C++ / Rust</li>
+                        <li>PyTorch</li>
+                    </ul>
+                </div>
+
+                <div class="bento-card p-6 rounded-2xl md:col-span-4 lg:col-span-4" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-database text-pink-400 text-xl"></i>
+                            [cite_start]<h3 class="text-lg font-bold">Data & Vector DBs [cite: 19]</h3>
+                        </div>
+                        <div class="flex flex-wrap gap-2 justify-center">
+                            <span class="px-3 py-1 rounded bg-pink-900/20 text-pink-300 border border-pink-500/20 text-xs">Pinecone</span>
+                            <span class="px-3 py-1 rounded bg-pink-900/20 text-pink-300 border border-pink-500/20 text-xs">Weaviate</span>
+                            <span class="px-3 py-1 rounded bg-pink-900/20 text-pink-300 border border-pink-500/20 text-xs">MongoDB</span>
+                            <span class="px-3 py-1 rounded bg-pink-900/20 text-pink-300 border border-pink-500/20 text-xs">PostgreSQL</span>
+                            <span class="px-3 py-1 rounded bg-pink-900/20 text-pink-300 border border-pink-500/20 text-xs">Spark</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="experience" class="py-24 bg-[#08081a]">
+    <section id="experience" class="py-24 bg-black/30">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold mb-16 text-center" data-aos="fade-up">Professional <span class="text-cyan-400">Journey</span></h2>
             
-            <div class="max-w-4xl mx-auto relative timeline-line pl-8 md:pl-0">
+            <div class="max-w-4xl mx-auto space-y-8">
                 
-                <div class="relative pl-8 md:pl-12 pb-12" data-aos="fade-left">
-                    <div class="absolute left-[11px] top-0 w-5 h-5 rounded-full bg-cyan-400 border-4 border-[#08081a] shadow-[0_0_10px_#22d3ee]"></div>
-                    <div class="glass-card p-6 rounded-xl hover:border-cyan-500/50 transition-colors">
-                        <div class="flex flex-col md:flex-row justify-between mb-4">
-                            <div>
-                                <h3 class="text-2xl font-bold text-white">AI Scientist</h3>
-                                <p class="text-cyan-400 font-medium">XO Health Inc. (Remote)</p>
-                            </div>
-                            <span class="text-gray-400 text-sm mt-2 md:mt-0">Sep 2025 - Present</span>
+                <div class="bento-card p-8 rounded-2xl border-l-4 border-cyan-400" data-aos="fade-left">
+                    <div class="flex flex-col md:flex-row justify-between mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">AI Scientist</h3>
+                            [cite_start]<p class="text-cyan-400 font-medium">XO Health Inc. (Remote) [cite: 21, 22]</p>
                         </div>
-                        <ul class="space-y-2 text-gray-300 list-disc list-inside">
-                            <li>Led AI-powered data extraction saving hundreds of hours/month; improved operational efficiency by <strong class="text-white">80%</strong>.</li>
-                            <li>Designed parsing pipelines using OCR, GPT-4, and Claude for high-accuracy retrieval.</li>
-                            <li>Integrated scalable ETL workflows (AWS Lambda + S3) for real-time ingestion.</li>
-                        </ul>
+                        <span class="text-gray-400 mono-font">Sep 2025 - Present</span>
                     </div>
+                    <ul class="space-y-3 text-gray-300 list-none">
+                        [cite_start]<li class="flex items-start gap-2"><i class="fas fa-check mt-1 text-cyan-500 text-xs"></i> Led development of AI-powered data extraction saving hundreds of hours/month; improved operational efficiency by 80%[cite: 24].</li>
+                        [cite_start]<li class="flex items-start gap-2"><i class="fas fa-check mt-1 text-cyan-500 text-xs"></i> Designed ML document parsing pipelines using OCR, LLMs (GPT-4 + Claude) for high-accuracy retrieval[cite: 25].</li>
+                        [cite_start]<li class="flex items-start gap-2"><i class="fas fa-check mt-1 text-cyan-500 text-xs"></i> Integrated scalable ETL workflows (AWS Lambda + S3) for real-time data ingestion[cite: 26].</li>
+                    </ul>
                 </div>
 
-                <div class="relative pl-8 md:pl-12 pb-12" data-aos="fade-left" data-aos-delay="100">
-                    <div class="absolute left-[11px] top-0 w-5 h-5 rounded-full bg-purple-500 border-4 border-[#08081a] shadow-[0_0_10px_#a855f7]"></div>
-                    <div class="glass-card p-6 rounded-xl hover:border-purple-500/50 transition-colors">
-                        <div class="flex flex-col md:flex-row justify-between mb-4">
-                            <div>
-                                <h3 class="text-2xl font-bold text-white">Data Scientist</h3>
-                                <p class="text-purple-400 font-medium">Korn Ferry (Remote)</p>
-                            </div>
-                            <span class="text-gray-400 text-sm mt-2 md:mt-0">Sep 2023 - Sep 2025</span>
+                <div class="bento-card p-8 rounded-2xl border-l-4 border-purple-400" data-aos="fade-left" data-aos-delay="100">
+                    <div class="flex flex-col md:flex-row justify-between mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Data Scientist</h3>
+                            [cite_start]<p class="text-purple-400 font-medium">Korn Ferry (Remote) [cite: 28, 29]</p>
                         </div>
-                        <ul class="space-y-2 text-gray-300 list-disc list-inside">
-                            <li>Architected scalable RAG pipelines using Pinecone & GPT-4o-mini, improving match relevance by <strong class="text-white">35%</strong>.</li>
-                            <li>Deployed AI talent assessment models with 93% accuracy, reducing manual workload by 200+ hours.</li>
-                            <li>Built multimodal LLM analytics (video + transcript) to speed up decision making by 40%.</li>
-                        </ul>
+                        <span class="text-gray-400 mono-font">Sep 2023 - Sep 2025</span>
                     </div>
+                    <ul class="space-y-3 text-gray-300 list-none">
+                        [cite_start]<li class="flex items-start gap-2"><i class="fas fa-check mt-1 text-purple-500 text-xs"></i> Architected scalable RAG pipelines using Pinecone, BGE embeddings & GPT-4o-mini, improving match relevance by 35%[cite: 32].</li>
+                        [cite_start]<li class="flex items-start gap-2"><i class="fas fa-check mt-1 text-purple-500 text-xs"></i> Deployed AI-driven talent assessment models (93% accuracy), reducing manual workload by 200+ hours[cite: 31].</li>
+                        [cite_start]<li class="flex items-start gap-2"><i class="fas fa-check mt-1 text-purple-500 text-xs"></i> Built MCP-integrated autonomous agents for recruiter Q&A, cutting turnaround time by 25%[cite: 33].</li>
+                    </ul>
                 </div>
 
-                <div class="relative pl-8 md:pl-12 pb-12" data-aos="fade-left" data-aos-delay="200">
-                    <div class="absolute left-[11px] top-0 w-5 h-5 rounded-full bg-blue-500 border-4 border-[#08081a] shadow-[0_0_10px_#3b82f6]"></div>
-                    <div class="glass-card p-6 rounded-xl hover:border-blue-500/50 transition-colors">
-                        <div class="flex flex-col md:flex-row justify-between mb-4">
-                            <div>
-                                <h3 class="text-2xl font-bold text-white">Data Scientist</h3>
-                                <p class="text-blue-400 font-medium">Gravitas.ai (Remote)</p>
-                            </div>
-                            <span class="text-gray-400 text-sm mt-2 md:mt-0">May 2022 - Sep 2023</span>
+                <div class="bento-card p-8 rounded-2xl border-l-4 border-blue-400" data-aos="fade-left" data-aos-delay="200">
+                    <div class="flex flex-col md:flex-row justify-between mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Data Scientist</h3>
+                            [cite_start]<p class="text-blue-400 font-medium">Gravitas.ai (Remote) [cite: 36, 37]</p>
                         </div>
-                        <ul class="space-y-2 text-gray-300 list-disc list-inside">
-                            <li>Developed healthcare conversational AI agents (Lex + LangChain) serving 10k+ daily users.</li>
-                            <li>Achieved 95%+ message delivery reliability via multi-channel pipeline (Web, WhatsApp).</li>
-                            <li>Implemented CI/CD (Docker + GitLab), reducing release cycles by 50%.</li>
-                        </ul>
+                        <span class="text-gray-400 mono-font">May 2022 - Sep 2023</span>
                     </div>
+                    <ul class="space-y-3 text-gray-300 list-none">
+                        [cite_start]<li class="flex items-start gap-2"><i class="fas fa-check mt-1 text-blue-500 text-xs"></i> Developed healthcare conversational AI agents (Lex + LangChain) serving 10k+ daily users[cite: 39].</li>
+                        [cite_start]<li class="flex items-start gap-2"><i class="fas fa-check mt-1 text-blue-500 text-xs"></i> Designed NLP pipelines for intent classification (92% accuracy)[cite: 41].</li>
+                        [cite_start]<li class="flex items-start gap-2"><i class="fas fa-check mt-1 text-blue-500 text-xs"></i> Established CI/CD (Docker + GitLab + AWS), reducing release cycles by 50%[cite: 43].</li>
+                    </ul>
                 </div>
 
-                 <div class="relative pl-8 md:pl-12" data-aos="fade-left" data-aos-delay="300">
-                    <div class="absolute left-[11px] top-0 w-5 h-5 rounded-full bg-green-500 border-4 border-[#08081a] shadow-[0_0_10px_#22c55e]"></div>
-                    <div class="glass-card p-6 rounded-xl hover:border-green-500/50 transition-colors">
-                        <div class="flex flex-col md:flex-row justify-between mb-4">
-                            <div>
-                                <h3 class="text-2xl font-bold text-white">Data Scientist</h3>
-                                <p class="text-green-400 font-medium">Nextgen Innovation Labs (Remote)</p>
-                            </div>
-                            <span class="text-gray-400 text-sm mt-2 md:mt-0">Oct 2021 - Apr 2022</span>
+                 <div class="bento-card p-8 rounded-2xl border-l-4 border-green-400" data-aos="fade-left" data-aos-delay="300">
+                    <div class="flex flex-col md:flex-row justify-between mb-4">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">Data Scientist</h3>
+                            [cite_start]<p class="text-green-400 font-medium">Nextgen Innovation Labs [cite: 44, 45]</p>
                         </div>
-                        <ul class="space-y-2 text-gray-300 list-disc list-inside">
-                            <li>Trained YOLOv5 & Mask R-CNN achieving 92% mAP; reduced manual OCR errors by 80%.</li>
-                            <li>Deployed large-scale image processing on AWS (SageMaker), managing 1000+ parallel jobs.</li>
-                        </ul>
+                        <span class="text-gray-400 mono-font">Oct 2021 - Apr 2022</span>
                     </div>
+                    <ul class="space-y-3 text-gray-300 list-none">
+                        [cite_start]<li class="flex items-start gap-2"><i class="fas fa-check mt-1 text-green-500 text-xs"></i> Trained YOLOv5 and Mask R-CNN models achieving 92% mAP[cite: 47].</li>
+                        [cite_start]<li class="flex items-start gap-2"><i class="fas fa-check mt-1 text-green-500 text-xs"></i> Deployed large-scale image processing on AWS (SageMaker), managing 1000+ parallel jobs[cite: 49].</li>
+                    </ul>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-24">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-16 text-center" data-aos="fade-up">Featured <span class="text-cyan-400">Works</span></h2>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="glass-card rounded-xl overflow-hidden group" data-aos="zoom-in">
-                    <div class="h-48 bg-gradient-to-br from-gray-800 to-black flex items-center justify-center group-hover:from-cyan-900/40 group-hover:to-blue-900/40 transition-all">
-                        <i class="fas fa-file-contract text-5xl text-gray-500 group-hover:text-cyan-400 transition-colors"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Automated Quoting System</h3>
-                        <p class="text-gray-400 text-sm mb-4">AI-driven extraction improving efficiency by 80% using GPT-4 & OCR.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs bg-white/10 px-2 py-1 rounded">GPT-4</span>
-                            <span class="text-xs bg-white/10 px-2 py-1 rounded">AWS Lambda</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-xl overflow-hidden group" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="h-48 bg-gradient-to-br from-gray-800 to-black flex items-center justify-center group-hover:from-purple-900/40 group-hover:to-pink-900/40 transition-all">
-                        <i class="fas fa-search text-5xl text-gray-500 group-hover:text-purple-400 transition-colors"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Enterprise RAG Pipeline</h3>
-                        <p class="text-gray-400 text-sm mb-4">Talent candidate matching system using Pinecone & BGE embeddings.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs bg-white/10 px-2 py-1 rounded">RAG</span>
-                            <span class="text-xs bg-white/10 px-2 py-1 rounded">Pinecone</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-xl overflow-hidden group" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="h-48 bg-gradient-to-br from-gray-800 to-black flex items-center justify-center group-hover:from-blue-900/40 group-hover:to-cyan-900/40 transition-all">
-                        <i class="fas fa-comments text-5xl text-gray-500 group-hover:text-blue-400 transition-colors"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold mb-2">Healthcare Chatbot</h3>
-                        <p class="text-gray-400 text-sm mb-4">Conversational AI serving 10k+ daily users with 92% intent accuracy.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="text-xs bg-white/10 px-2 py-1 rounded">Amazon Lex</span>
-                            <span class="text-xs bg-white/10 px-2 py-1 rounded">NLP</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-12 border-t border-white/10 bg-black/50">
+    <footer class="py-12 border-t border-white/5 bg-black">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-2xl font-bold mb-6">Let's build the future of AI together</h2>
+            <h2 class="text-3xl font-bold mb-8">Ready to Accelerate Your AI Initiatives?</h2>
+            
             <div class="flex justify-center gap-6 mb-8">
-                <a href="mailto:priyamkakati46@gmail.com" class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-cyan-400 hover:bg-cyan-400 hover:text-black transition-all">
+                <a href="mailto:priyamkakati46@gmail.com" class="w-14 h-14 rounded-full bento-card flex items-center justify-center text-cyan-400 hover:text-white hover:bg-cyan-600 transition-all text-xl">
                     <i class="fas fa-envelope"></i>
                 </a>
-                <a href="https://linkedin.com/in/priyam-kakati" class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-blue-400 hover:bg-blue-400 hover:text-black transition-all">
+                <a href="https://linkedin.com/in/priyam-kakati" target="_blank" class="w-14 h-14 rounded-full bento-card flex items-center justify-center text-blue-400 hover:text-white hover:bg-blue-600 transition-all text-xl">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://github.com/iteachmachines" class="w-12 h-12 rounded-full glass-card flex items-center justify-center text-purple-400 hover:bg-purple-400 hover:text-black transition-all">
+                <a href="https://github.com/iteachmachines" target="_blank" class="w-14 h-14 rounded-full bento-card flex items-center justify-center text-purple-400 hover:text-white hover:bg-purple-600 transition-all text-xl">
                     <i class="fab fa-github"></i>
                 </a>
             </div>
-            <p class="text-gray-500 text-sm">© 2025 Priyam Kakati. All rights reserved.</p>
+            
+            <div class="text-gray-600 text-sm">
+                <p>&copy; 2025 Priyam Kakati. Built with <i class="fas fa-code text-cyan-500"></i> & <i class="fas fa-coffee text-amber-700"></i></p>
+                [cite_start]<p class="mt-2 text-xs opacity-50">AWS Certified Machine Learning Specialty [cite: 53] [cite_start]• TensorFlow Developer [cite: 55]</p>
+            </div>
         </div>
     </footer>
 
     <script>
-        // Initialize AOS Animation Library
+        // Init Animations
         AOS.init({
-            duration: 1000,
+            duration: 800,
             once: true,
-            mirror: false
+            offset: 50
         });
 
-        // Initialize Particles.js
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 60, density: { enable: true, value_area: 800 } },
-                color: { value: ["#00f3ff", "#bc13fe"] },
-                shape: { type: "circle" },
-                opacity: { value: 0.3, random: true },
-                size: { value: 3, random: true },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: "#ffffff",
-                    opacity: 0.1,
-                    width: 1
-                },
-                move: {
-                    enable: true,
-                    speed: 2,
-                    direction: "none",
-                    random: false,
-                    straight: false,
-                    out_mode: "out",
-                    bounce: false,
-                }
-            },
-            interactivity: {
-                detect_on: "canvas",
-                events: {
-                    onhover: { enable: true, mode: "repulse" },
-                    onclick: { enable: true, mode: "push" },
-                    resize: true
-                }
-            },
-            retina_detect: true
+        // Typing Effect
+        var typed = new Typed('#typing-text', {
+            strings: ['Data Scientist.', 'AI Engineer.', 'Kaggle Expert.'],
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 2000,
+            loop: true
         });
     </script>
 </body>
