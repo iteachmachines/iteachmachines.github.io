@@ -3,311 +3,519 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Priyam Kakati | AI/ML Consultant & Data Science Expert</title>
-    <meta name="description" content="Award-winning AI/ML expert with 5+ years experience delivering enterprise-grade machine learning solutions. Top 1% Kaggle Grandmaster.">
+    <title>Priyam Kakati | AI/ML Engineer & Kaggle Expert</title>
+    <meta name="description" content="AI/ML Engineer specializing in LLMs, Computer Vision, and Generative AI. Top 1% Kaggle Expert with 4+ years enterprise experience.">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body { 
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1a2e 50%, #16213e 100%);
+            overflow-x: hidden;
+        }
+        
         .gradient-text {
-            background: linear-gradient(45deg, #3b82f6, #60a5fa, #93c5fd);
+            background: linear-gradient(120deg, #00f5ff, #0099ff, #7b68ee);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease infinite;
         }
-        .card-hover {
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+        
+        @keyframes gradientShift {
+            0%, 100% { filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(30deg); }
         }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(59, 130, 246, 0.2);
-        }
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-        }
-        .content {
+        
+        .neon-card {
+            background: rgba(20, 20, 40, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
-            z-index: 1;
+            overflow: hidden;
         }
-        .skill-bar {
-            width: 0;
-            transition: width 1s ease-in-out;
-        }
-        .number-counter {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease-out;
-        }
-        .number-counter.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .timeline-item::before {
+        
+        .neon-card::before {
             content: '';
             position: absolute;
-            left: -28px;
-            top: 8px;
-            width: 16px;
-            height: 16px;
-            background: #3b82f6;
-            border-radius: 50%;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 245, 255, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        
+        .neon-card:hover::before {
+            opacity: 1;
+        }
+        
+        .neon-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: rgba(0, 245, 255, 0.6);
+            box-shadow: 0 20px 60px rgba(0, 245, 255, 0.3), 0 0 40px rgba(0, 153, 255, 0.2);
+        }
+        
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+        
+        .content { position: relative; z-index: 1; }
+        
+        .tech-badge {
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.1), rgba(123, 104, 238, 0.1));
+            border: 1px solid rgba(0, 245, 255, 0.3);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s;
+        }
+        
+        .tech-badge:hover {
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.2), rgba(123, 104, 238, 0.2));
+            border-color: rgba(0, 245, 255, 0.6);
+            transform: translateY(-2px);
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.05), rgba(123, 104, 238, 0.05));
+            border-left: 4px solid #00f5ff;
+            backdrop-filter: blur(10px);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .glow-btn {
+            background: linear-gradient(135deg, #00f5ff, #0099ff);
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.4);
+            transition: all 0.3s;
+        }
+        
+        .glow-btn:hover {
+            box-shadow: 0 0 40px rgba(0, 245, 255, 0.6), 0 0 60px rgba(0, 153, 255, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #00f5ff, #7b68ee);
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.6);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+        
+        nav {
+            background: rgba(10, 14, 39, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 245, 255, 0.1);
+        }
+        
+        .skill-meter {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .skill-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00f5ff, #7b68ee);
+            border-radius: 10px;
+            transition: width 1.5s ease-out;
+            box-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+        }
+        
+        .project-img-container {
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+        }
+        
+        .project-img-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 245, 255, 0.8), rgba(123, 104, 238, 0.8));
+            opacity: 0;
+            transition: opacity 0.4s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .neon-card:hover .project-img-overlay {
+            opacity: 1;
         }
     </style>
 </head>
-<body class="bg-gray-900 text-white">
-    <!-- Particles Background -->
+<body class="text-white">
     <div id="particles-js"></div>
-
+    
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-gray-900/90 backdrop-blur-sm">
+    <nav class="fixed w-full z-50">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold gradient-text">PK</div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#expertise" class="hover:text-blue-400">Expertise</a>
-                    <a href="#achievements" class="hover:text-blue-400">Achievements</a>
-                    <a href="#projects" class="hover:text-blue-400">Projects</a>
-                    <a href="#contact" class="bg-blue-600 px-4 py-2 rounded-full hover:bg-blue-700">Schedule Call</a>
+                    <a href="#about" class="hover:text-cyan-400 transition">About</a>
+                    <a href="#experience" class="hover:text-cyan-400 transition">Experience</a>
+                    <a href="#projects" class="hover:text-cyan-400 transition">Projects</a>
+                    <a href="#skills" class="hover:text-cyan-400 transition">Skills</a>
+                    <a href="#contact" class="glow-btn px-6 py-2 rounded-full text-gray-900 font-semibold">Get in Touch</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-        <div class="content container mx-auto px-4 text-center">
-            <div class="mb-8 animate__animated animate__fadeIn">
-                <span class="bg-blue-900/30 text-blue-400 px-4 py-2 rounded-full">Priyam Kakati</span>
+    <header class="min-h-screen flex items-center justify-center content pt-20">
+        <div class="container mx-auto px-6 text-center">
+            <div class="mb-6 animate__animated animate__fadeIn floating">
+                <div class="inline-block bg-gradient-to-r from-cyan-500/20 to-purple-500/20 px-6 py-2 rounded-full border border-cyan-400/30">
+                    <span class="text-cyan-400">🚀 Available for Consulting</span>
+                </div>
             </div>
-            <h1 class="text-6xl font-bold mb-6 animate__animated animate__fadeInDown">
-                <span class="gradient-text">Turning Data Into</span><br>
-                <span class="gradient-text">Competitive Advantage</span>
+            <h1 class="text-7xl md:text-8xl font-bold mb-6 animate__animated animate__fadeInDown">
+                <span class="gradient-text">Priyam Kakati</span>
             </h1>
-            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-12 animate__animated animate__fadeInUp">
-                Enterprise AI solutions architect with proven track record in delivering production-grade machine learning systems for Fortune 500 companies and startups alike.
+            <p class="text-3xl md:text-4xl mb-4 text-gray-300 animate__animated animate__fadeInUp">
+                AI/ML Engineer & Data Scientist
             </p>
-            <div class="flex justify-center space-x-6 mb-12 animate__animated animate__fadeInUp">
-                <a href="#contact" class="bg-blue-600 px-8 py-3 rounded-full hover:bg-blue-700">Start Project →</a>
-                <a href="#projects" class="border border-blue-600 px-8 py-3 rounded-full hover:bg-blue-600/20">View Case Studies</a>
+            <p class="text-xl text-gray-400 max-w-3xl mx-auto mb-12 animate__animated animate__fadeInUp" style="animation-delay: 0.2s">
+                Building production-grade AI systems | <span class="text-cyan-400">LLMs</span>, <span class="text-purple-400">Computer Vision</span> & <span class="text-blue-400">Generative AI</span> | Top 1% Kaggle Expert
+            </p>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12">
+                <div class="stat-card p-6 rounded-xl">
+                    <div class="text-4xl font-bold text-cyan-400 mb-2">4+</div>
+                    <div class="text-gray-400">Years Experience</div>
+                </div>
+                <div class="stat-card p-6 rounded-xl">
+                    <div class="text-4xl font-bold text-purple-400 mb-2">Top 1%</div>
+                    <div class="text-gray-400">Kaggle Rank</div>
+                </div>
+                <div class="stat-card p-6 rounded-xl">
+                    <div class="text-4xl font-bold text-blue-400 mb-2">60k+</div>
+                    <div class="text-gray-400">Students Taught</div>
+                </div>
+                <div class="stat-card p-6 rounded-xl">
+                    <div class="text-4xl font-bold text-green-400 mb-2">50k+</div>
+                    <div class="text-gray-400">Blog Reads</div>
+                </div>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
+                <a href="https://github.com/iteachmachines" target="_blank" class="tech-badge px-6 py-3 rounded-full">
+                    <i class="fab fa-github mr-2"></i>GitHub
+                </a>
+                <a href="https://linkedin.com/in/priyam-kakati" target="_blank" class="tech-badge px-6 py-3 rounded-full">
+                    <i class="fab fa-linkedin mr-2"></i>LinkedIn
+                </a>
+                <a href="mailto:priyamkakati46@gmail.com" class="tech-badge px-6 py-3 rounded-full">
+                    <i class="fas fa-envelope mr-2"></i>Email
+                </a>
             </div>
         </div>
     </header>
 
-    <!-- Expertise Section -->
-<!-- Project Case Studies -->
-<section id="projects" class="py-20 bg-gray-900">
-    <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Enterprise Case Studies</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="card-hover bg-gray-800 rounded-xl overflow-hidden">
-                <div class="p-8">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-blue-900/30 px-4 py-2 rounded-full text-blue-400 mr-4">Retail</div>
-                        <div class="text-gray-400">Walmart Labs</div>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Inventory Optimization System</h3>
-                    <p class="text-gray-400 mb-6">Reduced overstock by 30% using time-series forecasting with Prophet and LSTM networks</p>
-                    <div class="flex justify-between items-center">
-                        <div class="flex space-x-4">
-                            <span class="px-3 py-1 bg-blue-900/30 rounded-full text-blue-400">Python</span>
-                            <span class="px-3 py-1 bg-blue-900/30 rounded-full text-blue-400">PyTorch</span>
-                        </div>
-                        <a href="#" class="text-blue-400 hover:text-blue-300">View Details →</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card-hover bg-gray-800 rounded-xl overflow-hidden">
-                <div class="p-8">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-blue-900/30 px-4 py-2 rounded-full text-blue-400 mr-4">Healthcare</div>
-                        <div class="text-gray-400">Mayo Clinic</div>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Medical Imaging Diagnostics</h3>
-                    <p class="text-gray-400 mb-6">95% accurate CNN model for early tumor detection in MRI scans</p>
-                    <div class="flex justify-between items-center">
-                        <div class="flex space-x-4">
-                            <span class="px-3 py-1 bg-blue-900/30 rounded-full text-blue-400">TensorFlow</span>
-                            <span class="px-3 py-1 bg-blue-900/30 rounded-full text-blue-400">DICOM</span>
-                        </div>
-                        <a href="#" class="text-blue-400 hover:text-blue-300">View Details →</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card-hover bg-gray-800 rounded-xl overflow-hidden">
-                <div class="p-8">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-blue-900/30 px-4 py-2 rounded-full text-blue-400 mr-4">Enterprise AI</div>
-                        <div class="text-gray-400">Tech Giants</div>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Custom RAG System Development</h3>
-                    <p class="text-gray-400 mb-6">Built enterprise-grade RAG system processing 1M+ documents with 92% accuracy and 300ms latency using custom vector stores</p>
-                    <div class="flex justify-between items-center">
-                        <div class="flex space-x-4">
-                            <span class="px-3 py-1 bg-blue-900/30 rounded-full text-blue-400">LangChain</span>
-                            <span class="px-3 py-1 bg-blue-900/30 rounded-full text-blue-400">Weaviate</span>
-                        </div>
-                        <a href="#" class="text-blue-400 hover:text-blue-300">View Details →</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card-hover bg-gray-800 rounded-xl overflow-hidden">
-                <div class="p-8">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-blue-900/30 px-4 py-2 rounded-full text-blue-400 mr-4">LLM</div>
-                        <div class="text-gray-400">Financial Services</div>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Mistral 7B Fine-tuning</h3>
-                    <p class="text-gray-400 mb-6">Fine-tuned Mistral 7B for financial analysis achieving 85% domain accuracy with 70% reduced latency using LoRA</p>
-                    <div class="flex justify-between items-center">
-                        <div class="flex space-x-4">
-                            <span class="px-3 py-1 bg-blue-900/30 rounded-full text-blue-400">PEFT</span>
-                            <span class="px-3 py-1 bg-blue-900/30 rounded-full text-blue-400">vLLM</span>
-                        </div>
-                        <a href="#" class="text-blue-400 hover:text-blue-300">View Details →</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card-hover bg-gray-800 rounded-xl overflow-hidden">
-                <div class="p-8">
-                    <div class="flex items-center mb-4">
-                        <div class="bg-blue-900/30 px-4 py-2 rounded-full text-blue-400 mr-4">GenAI</div>
-                        <div class="text-gray-400">E-commerce</div>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Product Description Generator</h3>
-                    <p class="text-gray-400 mb-6">Developed multi-modal AI system generating SEO-optimized product descriptions with 40% higher engagement</p>
-                    <div class="flex justify-between items-center">
-                        <div class="flex space-x-4">
-                            <span class="px-3 py-1 bg-blue-900/30 rounded-full text-blue-400">GPT-4</span>
-                            <span class="px-3 py-1 bg-blue-900/30 rounded-full text-blue-400">CLIP</span>
-                        </div>
-                        <a href="#" class="text-blue-400 hover:text-blue-300">View Details →</a>
-                    </div>
-                </div>
-            </div>
-               
-                       
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Achievements Section -->
-    <section id="achievements" class="py-20 bg-gray-800">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Industry Recognition</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div class="space-y-8">
-                    <div class="card-hover bg-gray-900 p-6 rounded-lg">
-                        <div class="flex items-start">
-                            <div class="bg-blue-900/30 p-3 rounded-lg mr-4">
-                                <i class="fas fa-trophy text-2xl text-blue-400"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold mb-2">Kaggle Expert</h3>
-                                <p class="text-gray-400">Rated top 1% in Kaggle which is the biggest platform for data science competitions.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-hover bg-gray-900 p-6 rounded-lg">
-                        <div class="flex items-start">
-                            <div class="bg-blue-900/30 p-3 rounded-lg mr-4">
-                                <i class="fas fa-certificate text-2xl text-blue-400"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-xl font-bold mb-2">AWS Certified ML Specialist</h3>
-                                <p class="text-gray-400">Expertise in deploying scalable ML solutions on AWS SageMaker and Lambda</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="relative pl-8 border-l border-gray-700">
-                    <div class="timeline-item relative mb-8">
-                        <div class="text-gray-400">2023</div>
-                        <h3 class="text-xl font-bold">Featured in ML Weekly</h3>
-                        <p class="text-gray-400">Recognized for innovative work on federated learning systems</p>
-                    </div>
-                  
-        </div>
-    </section>
-
- 
-
-    <!-- Testimonials -->
-    <section class="py-20 bg-gray-800">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Client Success Stories</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="card-hover bg-gray-900 p-8 rounded-xl">
-                    <div class="flex items-center mb-4">
-                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 content">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bold mb-16 text-center gradient-text">Professional Journey</h2>
+            <div class="max-w-4xl mx-auto space-y-8">
+                <div class="neon-card p-8 rounded-2xl">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                         <div>
-                            <div class="font-bold">Mark Johnson</div>
-                            <div class="text-gray-400 text-sm">CTO, FinTech Corp</div>
+                            <h3 class="text-3xl font-bold text-cyan-400">AI Scientist</h3>
+                            <p class="text-xl text-gray-300">XO Health Inc.</p>
                         </div>
+                        <div class="timeline-dot rounded-full mt-4 md:mt-0"></div>
+                        <p class="text-gray-400 mt-2 md:mt-0">Sep 2025 - Present</p>
                     </div>
-                    <p class="text-gray-400 mb-4">"Priyam's fraud detection system reduced our false positives by 40% while maintaining 99% detection accuracy. His MLOps implementation was production-ready from day one."</p>
-                    <div class="text-blue-400">$2.8M</div>
-                    <div class="text-sm text-gray-400">Annual Fraud Loss Prevented</div>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <span class="text-cyan-400 mr-3">▹</span>
+                            <span>Led AI-powered data extraction system saving <span class="text-cyan-400 font-semibold">hundreds of hours/month</span> with 80% efficiency boost</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-cyan-400 mr-3">▹</span>
+                            <span>Deployed ML document parsing with GPT-4 + Claude achieving high-accuracy retrieval</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-cyan-400 mr-3">▹</span>
+                            <span>Built scalable ETL workflows (SharePoint + AWS Lambda) for real-time ingestion</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-6">
+                        <span class="tech-badge px-4 py-2 rounded-full text-sm">GPT-4</span>
+                        <span class="tech-badge px-4 py-2 rounded-full text-sm">Claude</span>
+                        <span class="tech-badge px-4 py-2 rounded-full text-sm">AWS Lambda</span>
+                        <span class="tech-badge px-4 py-2 rounded-full text-sm">OCR</span>
+                    </div>
                 </div>
-                <div class="card-hover bg-gray-900 p-8 rounded-xl">
-                    <div class="flex items-center mb-4">
-                        <img src="https://randomuser.me/api/portraits/women/75.jpg" alt="Client" class="w-12 h-12 rounded-full mr-4">
+
+                <div class="neon-card p-8 rounded-2xl">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                         <div>
-                            <div class="font-bold">Sarah Chen</div>
-                            <div class="text-gray-400 text-sm">Director, HealthAI</div>
+                            <h3 class="text-3xl font-bold text-purple-400">Data Scientist</h3>
+                            <p class="text-xl text-gray-300">Korn Ferry</p>
                         </div>
+                        <p class="text-gray-400 mt-2 md:mt-0">Sep 2023 - Sep 2025</p>
                     </div>
-                    <p class="text-gray-400 mb-4">"The patient risk stratification model developed by Priyam improved our early intervention rate by 35%. His attention to HIPAA compliance was particularly impressive."</p>
-                    <div class="text-blue-400">92%</div>
-                    <div class="text-sm text-gray-400">Model Accuracy in Production</div>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-3">▹</span>
+                            <span>Deployed talent assessment models at <span class="text-purple-400 font-semibold">93% accuracy</span>, saving 200+ hours/month</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-3">▹</span>
+                            <span>Built RAG pipelines with Pinecone + GPT-4o-mini improving match relevance by 35%</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-purple-400 mr-3">▹</span>
+                            <span>Created multimodal LLM analytics (video + transcript) with 40% faster decisions</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-6">
+                        <span class="tech-badge px-4 py-2 rounded-full text-sm">RAG</span>
+                        <span class="tech-badge px-4 py-2 rounded-full text-sm">Pinecone</span>
+                        <span class="tech-badge px-4 py-2 rounded-full text-sm">GPT-4</span>
+                        <span class="tech-badge px-4 py-2 rounded-full text-sm">MLflow</span>
+                    </div>
+                </div>
+
+                <div class="neon-card p-8 rounded-2xl">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <div>
+                            <h3 class="text-3xl font-bold text-blue-400">Data Scientist</h3>
+                            <p class="text-xl text-gray-300">Gravitas.ai</p>
+                        </div>
+                        <p class="text-gray-400 mt-2 md:mt-0">May 2022 - Sep 2023</p>
+                    </div>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-start">
+                            <span class="text-blue-400 mr-3">▹</span>
+                            <span>Built healthcare conversational AI serving <span class="text-blue-400 font-semibold">10k+ daily users</span> with 25% higher satisfaction</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-400 mr-3">▹</span>
+                            <span>Deployed multi-channel pipeline (Web, WhatsApp, Messenger) with 95%+ reliability</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-blue-400 mr-3">▹</span>
+                            <span>Designed NLP pipelines achieving 92% accuracy in intent classification</span>
+                        </li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2 mt-6">
+                        <span class="tech-badge px-4 py-2 rounded-full text-sm">Amazon Lex</span>
+                        <span class="tech-badge px-4 py-2 rounded-full text-sm">LangChain</span>
+                        <span class="tech-badge px-4 py-2 rounded-full text-sm">Docker</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-<!-- Contact Section -->
-<section id="contact" class="py-20 bg-gray-900">
-   <div class="container mx-auto px-4 max-w-3xl">
-       <div class="text-center mb-16">
-           <h2 class="text-4xl font-bold mb-4 gradient-text">Ready to Transform Your Business with AI?</h2>
-           <p class="text-gray-400">Schedule a free 30-minute consultation to discuss your project</p>
-       </div>
-       <form action="https://formspree.io/f/xanqedlk" method="POST" class="space-y-6">
-           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-               <div>
-                   <input type="text" name="name" placeholder="Full Name" required
-                       class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-               </div>
-               <div>
-                   <input type="email" name="email" placeholder="Work Email" required
-                       class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-               </div>
-           </div>
-           <div>
-               <select name="service" required
-                   class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                   <option value="">Select Service Needed</option>
-                   <option>Machine Learning Development</option>
-                   <option>AI Strategy Consulting</option>
-                   <option>Data Infrastructure Setup</option>
-                   <option>Model Optimization</option>
-               </select>
-           </div>
-           <div>
-               <textarea name="message" rows="5" placeholder="Project Details (Industry, Data Availability, Goals)" required
-                   class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
-           </div>
-           <div class="text-center">
-               <button type="submit" 
-                   class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-colors duration-200">
-                   Schedule Consultation
-               </button>
-           </div>
-       </form>
-   </div>
-</section>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 content bg-black/20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bold mb-16 text-center gradient-text">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="neon-card rounded-2xl overflow-hidden">
+                    <div class="project-img-container bg-gradient-to-br from-cyan-900/30 to-blue-900/30">
+                        <div class="project-img-overlay">
+                            <i class="fas fa-robot text-6xl text-white"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="tech-badge px-3 py-1 rounded-full text-sm mr-3">Automation</span>
+                            <span class="text-gray-400 text-sm">XO Health</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-cyan-400">AI Data Extraction System</h3>
+                        <p class="text-gray-300 mb-4">Automated quoting process with GPT-4 + Claude, saving hundreds of hours monthly and improving efficiency by 80%</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-badge px-3 py-1 rounded-full text-xs">GPT-4</span>
+                            <span class="tech-badge px-3 py-1 rounded-full text-xs">OCR</span>
+                            <span class="tech-badge px-3 py-1 rounded-full text-xs">AWS Lambda</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="neon-card rounded-2xl overflow-hidden">
+                    <div class="project-img-container bg-gradient-to-br from-purple-900/30 to-pink-900/30">
+                        <div class="project-img-overlay">
+                            <i class="fas fa-brain text-6xl text-white"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="tech-badge px-3 py-1 rounded-full text-sm mr-3">RAG</span>
+                            <span class="text-gray-400 text-sm">Korn Ferry</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-purple-400">Enterprise RAG Pipeline</h3>
+                        <p class="text-gray-300 mb-4">Built scalable RAG system with Pinecone & BGE embeddings improving candidate matching by 35%</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-badge px-3 py-1 rounded-full text-xs">Pinecone</span>
+                            <span class="tech-badge px-3 py-1 rounded-full text-xs">GPT-4o</span>
+                            <span class="tech-badge px-3 py-1 rounded-full text-xs">BGE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="neon-card rounded-2xl overflow-hidden">
+                    <div class="project-img-container bg-gradient-to-br from-blue-900/30 to-cyan-900/30">
+                        <div class="project-img-overlay">
+                            <i class="fas fa-comments text-6xl text-white"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="tech-badge px-3 py-1 rounded-full text-sm mr-3">Healthcare</span>
+                            <span class="text-gray-400 text-sm">Gravitas.ai</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-blue-400">Conversational AI Agent</h3>
+                        <p class="text-gray-300 mb-4">Healthcare chatbot serving 10k+ daily users with 92% intent accuracy and 25% satisfaction boost</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-badge px-3 py-1 rounded-full text-xs">Amazon Lex</span>
+                            <span class="tech-badge px-3 py-1 rounded-full text-xs">LangChain</span>
+                            <span class="tech-badge px-3 py-1 rounded-full text-xs">NLP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="neon-card rounded-2xl overflow-hidden">
+                    <div class="project-img-container bg-gradient-to-br from-green-900/30 to-teal-900/30">
+                        <div class="project-img-overlay">
+                            <i class="fas fa-eye text-6xl text-white"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="tech-badge px-3 py-1 rounded-full text-sm mr-3">Computer Vision</span>
+                            <span class="text-gray-400 text-sm">Nextgen Labs</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-green-400">Object Detection Pipeline</h3>
+                        <p class="text-gray-300 mb-4">YOLOv5 & Mask R-CNN models achieving 92% mAP with scalable AWS deployment</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-badge px-3 py-1 rounded-full text-xs">YOLOv5</span>
+                            <span class="tech-badge px-3 py-1 rounded-full text-xs">Mask R-CNN</span>
+                            <span class="tech-badge px-3 py-1 rounded-full text-xs">SageMaker</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="neon-card rounded-2xl overflow-hidden">
+                    <div class="project-img-container bg-gradient-to-br from-red-900/30 to-orange-900/30">
+                        <div class="project-img-overlay">
+                            <i class="fas fa-video text-6xl text-white"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="tech-badge px-3 py-1 rounded-full text-sm mr-3">Multimodal</span>
+                            <span class="text-gray-400 text-sm">Korn Ferry</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-red-400">Video Analytics System</h3>
+                        <p class="text-gray-300 mb-4">Multimodal LLM system analyzing video + transcripts with 40% faster decision-making</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-badge px-3 py-1 rounded-full text-xs">OpenCV</span>
+                            <span class="tech-badge px-3 py-1 rounded-full text-xs">GPT-4.1</span>
+                            <span class="tech-badge px-3 py-1 rounded-full text-xs">Whisper</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="neon-card rounded-2xl overflow-hidden">
+                    <div class="project-img-container bg-gradient-to-br from-yellow-900/30 to-amber-900/30">
+                        <div class="project-img-overlay">
+                            <i class="fas fa-chart-line text-6xl text-white"></i>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="tech-badge px-3 py-1 rounded-full text-sm mr-3">MLOps</span>
+                            <span class="text-gray-400 text-sm">Multiple Projects</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 text-yellow-400">ML Observability Stack</h3>
+                        <p class="text-gray-300 mb-4">Production monitoring system achieving 99.9% uptime with proactive anomaly detection</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-badge px-3 py-1 rounded-full text-xs">MLflow</span>
+                            <span class="tech-badge px-3 py-1 rounded-full text-xs">Prometheus</span>
+                            <span class="tech-badge px-3 py-1 rounded-full text-xs">CloudWatch</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 content">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-bold mb-16 text-center gradient-text">Technical Arsenal</h2>
+            <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="neon-card p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-6 text-cyan-400">🤖 AI/ML Frameworks</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>PyTorch & TensorFlow</span>
+                                <span class="text-cyan-400">Expert</span>
+                            </div>
+                            <div class="skill-meter">
+                                <div class="skill-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>LangChain & LlamaIndex</span>
+                                <span class="text-cyan-400">Expert</span>
+                            </div>
+                            <div class="skill-meter">
+                                <div class="skill-fill" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>Hugging Face Transformers</span>
+                                <span class="text-cyan-400">Expert</span>
+                            </div>
+                            <div class="skill-meter">
+                                <div class="skill-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="neon-card p-8 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-6 text-purple-400">☁️ Cloud & MLOps</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span>AWS (SageMaker, Lambda, Bedrock)</span>
+                                <span class="text-purple-400">Expert</span>
